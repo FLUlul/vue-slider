@@ -24,7 +24,7 @@
         <div class="thumbs">
             
             <!-- we create a cicle for to get the single object every time and we create a key with the index, we make a v-bind for the class, and inside we type a ternary operator(if index is = activeSlide(a variable set to 0 in vue) then add the active class, else add an empty string) -->
-            <div class="thumb" v-for="slide, i in slides" :class="i === activeSlide ? 'active' : '' " :akey="i" @click="activeSlide=i">
+            <div class="thumb" v-for="slide, i in slides" :class="i === activeSlide ? 'active' : '' " :key="i" @click="activeSlide=i">
                 <!-- we get the single slide image and title -->
                 <img :src="slide.image" :alt="slide.title">
             </div>
