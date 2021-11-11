@@ -43,18 +43,5 @@ var app = new Vue (
             ]
             
         },
-        methods: {
-            autoSlide: function(){
-                setInterval(() => {
-                    this.activeSlide++
-                    if (this.activeSlide >= this.slides.length) {
-                        this.activeSlide = 0;
-                    }
-                }, 3000);
-            }
-        },
-        beforeMount(){
-            this.autoSlide()
-         },
     }
 );
