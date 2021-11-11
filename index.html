@@ -13,7 +13,9 @@
         <div class="images">
 
             <div class="image active">
+                <!-- v-bind with src and alt getting "slide" image and title -->
                 <img :src="slides[activeSlide].image" :alt="slides[activeSlide].title">
+                <!-- we get the single slide title and text (same as "slide" in for, but here we dont have a for :D) -->
                 <h2>{{slides[activeSlide].title}}</h2>
                 <p>{{slides[activeSlide].text}}</p>
             </div>
@@ -21,16 +23,20 @@
         </div>
         <div class="thumbs">
             
+            <!-- we create a cicle for to get the single object every time and we create a key with the index, we make a v-bind for the class, and inside we type a ternary operator(if index is = activeSlide(a variable set to 0 in vue) then add the active class, else add an empty string) -->
             <div class="thumb" v-for="slide, i in slides" :class="i === activeSlide ? 'active' : '' " :key="i">
+                <!-- we get the single slide image and title -->
                 <img :src="slide.image" :alt="slide.title">
             </div>
             
         </div>
             
         <div class="container-btn">
+            <!-- adding an event on click calling a function -->
             <button class="back" @click="buttonBack">
                 <i class="fas fa-arrow-up"></i>
             </button>
+            <!-- adding an event on click calling a function -->
             <button class="next" @click="buttonNext">
                 <i class="fas fa-arrow-down"></i>
             </button>
